@@ -1,16 +1,13 @@
+
 import os
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 
 load_dotenv()
 
-
 def load_llm():
-
-    llm = ChatGroq(
-        model="llama-3.3-70b-versatile",
+    return ChatGroq(
+        model="openai/gpt-oss-120b",
         api_key=os.getenv("GROQ_API_KEY"),
         temperature=0
     )
-
-    return llm
